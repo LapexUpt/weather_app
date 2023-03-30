@@ -1,1 +1,1 @@
-# weather_app
+# Some simple weather check console app
