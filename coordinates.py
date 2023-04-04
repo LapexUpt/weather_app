@@ -1,13 +1,13 @@
 from dadata import Dadata
+import config
 
 
-ADDRESS_STR = "томск ленская 51 45"
-token = "27fd8c4db134d75020aa8f939c019bb36b756ba3"
-secret = "c51b6a0036a8175a75f53b1171657230804559ea"
-dadata = Dadata(token, secret)
-address_pretty = dadata.clean("address", ADDRESS_STR)
+INPUT_ADDRESS = "томск ленская 51 45"
+dadata = Dadata(config.DADATA_TOKEN, config.DADATA_SECRET)
+current_address = dadata.clean(name="address", source=INPUT_ADDRESS)
 
-curr_lat = address_pretty["geo_lat"]
-curr_lon = address_pretty["geo_lon"]
+current_lat = current_address["geo_lat"]
+current_lon = current_address["geo_lon"]
+current_city = current_address["city_with_type"]
 
-print(curr_lat, curr_lon)
+print(current_lat, current_lon)
