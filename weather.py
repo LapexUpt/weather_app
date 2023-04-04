@@ -6,6 +6,7 @@ import pprint
 def main() -> dict:
     my_coordinates = get_gps_coordinates()
     my_weather = get_weather(my_coordinates)
+    print()
     pprint.pprint(my_weather)
 
 
