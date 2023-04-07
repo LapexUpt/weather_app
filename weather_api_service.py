@@ -14,6 +14,5 @@ def get_weather(coordinates) -> str:
     temp = round(current_weather["main"]["temp"])
     temp_feels = round(current_weather["main"]["feels_like"])
     weather_description = config.weather_data[current_weather["weather"][0]["main"]]
-    weather = f"Температура в {city} {temp}. Ощущается как {temp_feels}. {weather_description}."
     
-    return weather
+    return f"Температура в {city} {temp}. Ощущается как {temp_feels}. {weather_description}."

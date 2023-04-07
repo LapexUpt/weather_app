@@ -21,6 +21,6 @@ def get_gps_coordinates() -> dict:
                 current_coordinates["current_city"] = current_address["region_with_type"]
             else:    
                 current_coordinates["current_city"] = current_address["city_with_type"]
-        break
+            break
     
     return current_coordinates
