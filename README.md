@@ -1,1 +1,1 @@
-# Simple weather app
+# Simple weather сonsole app

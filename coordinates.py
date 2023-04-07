@@ -12,21 +12,15 @@ def get_gps_coordinates() -> dict:
             print("Координаты введенного адреса не найдены. Попробуйте еще раз\n")
         else:
             coordinates_exist
+            current_coordinates = {
+                    "current_lat": current_address["geo_lat"],
+                    "current_lon": current_address["geo_lon"]
+                    
+            }
             if not current_address["city_with_type"]:
-                current_coordinates = {
-                    "current_lat": current_address["geo_lat"],
-                    "current_lon": current_address["geo_lon"],
-                    "current_city": current_address["region_with_type"]
-                    
-                }
+                current_coordinates["current_city"] = current_address["region_with_type"]
             else:    
-                current_coordinates = {
-                    "current_lat": current_address["geo_lat"],
-                    "current_lon": current_address["geo_lon"],
-                    "current_city": current_address["city_with_type"]
-                    
-                }
+                current_coordinates["current_city"] = current_address["city_with_type"]
         break
-
-        
+    
     return current_coordinates
